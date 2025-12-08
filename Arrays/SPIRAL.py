@@ -1,7 +1,7 @@
 # 1 to check the interpretstion skills
 # 2  
 
-def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+def spiralOrder(matrix: List[List[int]]) -> List[int]:
     n=len(matrix)
     m=len(matrix[0])
     left=0

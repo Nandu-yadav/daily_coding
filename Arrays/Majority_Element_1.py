@@ -31,23 +31,17 @@ nums = [2, 2, 2, 2, 1, 3]
 print(Majority_hashing(nums))
 
 
-
-
-
-
-
-
-def majorityElement(self, arr: List[int]) -> int:
+def majorityElement(arr: List[int]) -> int:
     cnt=0
     el=0
     for i in range(len(arr)):
         if cnt==0:
                 cnt=1
                 el=arr[i]
-            elif arr[i]==el:
-                cnt+=1
-            else:
-                cnt-1
+        elif arr[i]==el:
+            cnt+=1
+        else:
+            cnt-1
         cnt1=0
         for i in range(len(arr)):
             if arr[i]==el:
