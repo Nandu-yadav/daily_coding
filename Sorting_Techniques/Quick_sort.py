@@ -1,24 +1,32 @@
+#Divide and conqer algorith
+#it works on the fact that all the elements before pivot are smaller and all the elments after are greater than pivot
+#
 
-def Quick_sort(arr,l,r):
-    n=len(arr)
-    pivot=arr[0]
+def quick_sort(arr):
+    def partition(low, high):
+        pivot = arr[high]         # pivot variable
+        i = low - 1               # index of smaller element
+
+        for j in range(low, high):
+            if arr[j] < pivot:    # compare with pivot
+                i += 1
+                arr[i], arr[j] = arr[j], arr[i]  # swap
+
+        arr[i + 1], arr[high] = arr[high], arr[i + 1]
+        return i + 1              # pivot final position
+
+    def sort(low, high):
+        if low < high:
+            pi = partition(low, high)
+            sort(low, pi - 1)     # left side
+            sort(pi + 1, high)    # right side
+
+    sort(0, len(arr) - 1)
+    return arr
+
+arr = [10, 7, 8, 9, 1, 5]
+print(quick_sort(arr))
+
+
+
     
-    if (l<=r):
-        def partition(arr,r,l):
-            pivot=arr[l]
-            i=l
-            j=r
-            while(i<j):
-                while (arr[i]<=arr[pivot] and i<=r):
-                    i+=1
-                while (arr[j]>=arr[pivot] and j<=l+1):
-                    j-=1
-
-                    arr[i],arr[j]=arr[j],arr[i]
-                arr[j],arr[l]=arr[l],arr[j]
-
-                    
-
-        
-
-        
