@@ -29,7 +29,7 @@ def divisor_threshold1(arr,threshold):
         else:
             low=mid+1
     return ans
-
+nums = [1,2,5,9]
 print(divisor_threshold1(nums,6))
 nums1 = [44,22,33,11,1]
 print(divisor_threshold1(nums1,5))
