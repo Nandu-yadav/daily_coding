@@ -47,3 +47,34 @@ sol = Solution()
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 result_sum, elements = sol.maxSubArray(nums)
 print(f"Max sum: {result_sum}, Elements: {elements}")  # Output: Max sum: 6, Elements: [4, -1, 2, 1]
+
+'''
+Core Idea (Intuition)
+
+While traversing the array, keep track of:
+
+Current subarray sum
+
+Maximum sum found so far
+
+If the current sum becomes negative, discard it (because adding a negative sum to future elements will reduce the total).
+
+👉 In simple words:
+“If the running sum hurts you, drop it and start fresh.”
+
+Algorithm Steps
+
+Initialize:
+
+max_sum = arr[0]
+
+current_sum = arr[0]
+
+Traverse from index 1 to n-1:
+
+current_sum = max(arr[i], current_sum + arr[i])
+
+max_sum = max(max_sum, current_sum)
+
+Return max_sum
+u'''

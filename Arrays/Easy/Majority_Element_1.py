@@ -50,4 +50,50 @@ def majorityElement(arr: List[int]) -> int:
             return el
         return -1
             
-        
+
+
+#Moore’s Voting Algorithm (also called the Boyer–Moore Majority Vote Algorithm)
+'''is an efficient method to find the majority element in an array.
+
+What is a Majority Element?
+
+A majority element is an element that appears more than ⌊n/2⌋ times in an array of size n.
+
+Example:
+[2, 2, 1, 2, 3, 2, 2] → majority element is 2
+
+Key Idea (Intuition)
+
+If an element appears more than half the time, it cannot be completely canceled out by other elements.
+
+The algorithm works by pairing different elements and canceling them.
+
+The remaining candidate (if a majority exists) will be the majority element.
+
+Algorithm Steps
+Step 1: Find a Candidate
+
+Initialize:
+
+candidate = None
+
+count = 0
+
+Traverse the array:
+
+If count == 0, set candidate = current element
+
+If current element == candidate, increment count
+
+Else, decrement count
+
+At the end of this step, candidate is a potential majority element.
+
+Step 2: Verify the Candidate (Important!)
+
+Count the occurrences of the candidate.
+
+If it appears more than n/2 times → it is the majority element.
+
+Otherwise → no majority element exists.
+'''  

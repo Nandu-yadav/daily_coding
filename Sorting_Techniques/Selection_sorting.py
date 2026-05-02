@@ -1,13 +1,10 @@
-
-
-
 def Selection(arr):
     n=len(arr)
     
     for i in range(n):
         min_index=i
         for j in range(i,n):
-            if  arr[min_index]>arr[j]:
+            if  arr[min_index] > arr[j]:
                 min_index=j
 
         arr[min_index],arr[i]=arr[i],arr[min_index]
@@ -15,8 +12,6 @@ def Selection(arr):
 nums=[2,4,1,6,9,6,7,3]
 Selection(nums)
 print(nums)
-
-
 
 
 
