@@ -4,12 +4,7 @@ class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
-def TraverseAndPrint(head):
-    currentNode=head
-    while currentNode:
-        print(currentNode.data,end="->")
-        currentNode =currentNode.next
-    print("null")
+
 n1=Node(7)
 n2=Node(11)
 n3=Node(3)
@@ -21,6 +16,13 @@ n2.next=n3
 n3.next=n4
 n4.next=n5
 
+def TraverseAndPrint(head):
+    currentNode=head
+    while currentNode:
+        print(currentNode.data,end="->")
+        currentNode =currentNode.next
+    print("null")
+    
 TraverseAndPrint(n1)
 #find the lowest Value in LL
 def Lowest(head):

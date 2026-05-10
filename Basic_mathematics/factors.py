@@ -10,7 +10,9 @@ def factors(n):
     for i in range(2,int(math.sqrt(n))):
         if n%i==0:
             print(i)
-    for i in range(int(math.sqrt(n),2,-1)):
+    for i in range(int(math.sqrt(n)),2,-1):
                 if n%i==0:
                     print(n/i)    
     return 0
+
+print(factors(50))

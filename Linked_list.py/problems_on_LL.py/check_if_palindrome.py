@@ -14,7 +14,7 @@ class Solution:
         head.next=None
         return newHead
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList(self, head):
         
         prev=None         #declaring the previous which is Nonea at first
         temp=head          # starting both temp and front from first
@@ -27,4 +27,14 @@ class Solution:
             temp=front         # temp to frot and now both temp and front same elment(next elemnt now) 
         return prev
 
+
+def count(head):
+    cnt=1
+    temp=head
+    while temp:
+        temp=temp.next
+        cnt+=1
+    return cnt
+arr=[5,4,3,2,1]
+print(count(5))
 
