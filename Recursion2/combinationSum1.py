@@ -1,4 +1,3 @@
-
 #combination sum 1
 #any index any number of times
 def CombinationSum(i,arr,target,ans,ds):
@@ -10,8 +9,7 @@ def CombinationSum(i,arr,target,ans,ds):
     if arr[i]<=target:
         ds.append(arr[i])                           #3. 
         CombinationSum(i,arr,target-arr[i],ans,ds)
-        ds.pop()
-    
+        ds.pop()    
     CombinationSum(i+1,arr,target,ans,ds) 
     return ans
 

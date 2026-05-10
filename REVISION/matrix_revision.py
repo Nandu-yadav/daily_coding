@@ -12,7 +12,7 @@ def MarkRow(i,n):
 def MarkCol(j,n):
     for i in range(n):
         if mat[i][j]!=0:
-            mat[i][j]=-
+            mat[i][j]=-1
 def setMat0(mat,n):
     for i in range(n):
         for j in range(i,n):
