@@ -15,6 +15,8 @@ def Merge(arr,low,mid,high):
         temp.append(arr[j])
     for i in range(high):
         arr[i]=temp[i]
+
+def mSort(arrr,low,high,n):
     
 
 nums=[2,4,1,6,9,6,7,3]

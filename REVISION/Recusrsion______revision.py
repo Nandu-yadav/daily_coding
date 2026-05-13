@@ -62,31 +62,52 @@ def merge(low,mid,high,arr,temp):
     return temp
 
 
-#______________________________________________________________________
-def QuickSort(arr):
+# #______________________________________________________________________
+# def QuickSort(arr):
 
-    def partition(arr,low,high):
-        i=low-1
-        j=high
-        p=arr[0]
-        while(i<=j):
-            while arr[i] <= p and i<=high:
-                i+=1
-            while(arr[j]>p and j>=low):
-                j-=1
-            if i<j:
-                arr[i],arr[j]=arr[j],arr[i]
-        arr[low],arr[j]=arr[j],arr[low]
-        return i+1
+#     def partition(arr,low,high):
+#         i=low-1
+#         j=high
+#         p=arr[0]
+#         while(i<=j):
+#             while arr[i] <= p and i<=high:
+#                 i+=1
+#             while(arr[j]>p and j>=low):
+#                 j-=1
+#             if i<j:
+#                 arr[i],arr[j]=arr[j],arr[i]
+#         arr[low],arr[j]=arr[j],arr[low]
+#         return i+1
 
-def Sort(arr,low,high):
-    # Pick a Pivot
-    if low<=high:
-        p=partition(arr,low,high)
-        QuickSort(arr,low,p-1)
-        QuickSort(arr,p+1,high)
-    QuickSort(arr,0,len(arr)-1)
-    return arr
+# def Sort(arr,low,high):
+#     # Pick a Pivot
+#     if low<=high:
+#         p=partition(arr,low,high)
+#         QuickSort(arr,low,p-1)
+#         QuickSort(arr,p+1,high)
+#     QuickSort(arr,0,len(arr)-1)
+#     return arr
 
-arr=[3,1,2,5,6,8,4,0,9,7]
-print(QuickSort(arr,0,9))
+# arr=[3,1,2,5,6,8,4,0,9,7]
+# print(QuickSort(arr,0,9))
+
+
+def subsetSUM1(arr):
+    ans=[]
+    n=len(arr)
+    def backtrack(i,sum,n,arr,ans):
+        if i>=n:
+            ans.append(sum)
+            return
+        #pick the element
+        backtrack(i+1,sum+arr[i],n,arr,ans)   #i+1 move the pointer
+        #pick the element
+        backtrack(i+1,sum,n,arr,ans)
+
+        return ans
+    #call with initial conditions
+    backtrack(0,0,3,arr,ans)
+    return ans
+arrSubsetSum=[3,1,2]
+print(subsetSUM1(arrSubsetSum))
+
