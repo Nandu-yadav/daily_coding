@@ -26,7 +26,7 @@ class Solution:
         
         for i in range(1, len(nums)):
             # Try extending current subarray or starting new one
-            if nums[i] > currSum + nums[i]:
+            if nums[i] > currSum + nums[i]: #means if currSum is negative
                 currSum = nums[i]
                 temp_start = i  # New subarray starts here
             else:
@@ -53,9 +53,9 @@ Core Idea (Intuition)
 
 While traversing the array, keep track of:
 
-Current subarray sum
+Current subarray sum (currSUM)
 
-Maximum sum found so far
+Maximum sum found so far (maxSUM)
 
 If the current sum becomes negative, discard it (because adding a negative sum to future elements will reduce the total).
 

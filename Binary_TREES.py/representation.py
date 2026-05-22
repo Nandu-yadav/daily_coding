@@ -1,7 +1,5 @@
 from collections import deque
 
-
-
 # Tree Node Definition
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):

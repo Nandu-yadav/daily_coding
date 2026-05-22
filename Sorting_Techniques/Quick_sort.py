@@ -20,7 +20,6 @@ def quick_sort(arr):
             pi = partition(low, high)
             sort(low, pi - 1)     # left side
             sort(pi + 1, high)    # right side
-
     sort(0, len(arr) - 1)
     return arr
 

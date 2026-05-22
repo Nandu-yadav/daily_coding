@@ -1,7 +1,5 @@
 #Moore's voting Algorithm
 
-
-
 nums = [2, 2, 2, 2, 1, 3]
 #BRUTE
 def Majority(arr):
@@ -27,28 +25,28 @@ def Majority_hashing(arr):
     for val in arr:
        if hash[val]>(n//2):
           return val
-nums = [2, 2, 2, 2, 1, 3]
+nums1 = [3,3,3,3, 1, 3]
 print(Majority_hashing(nums))
 
 
-def majorityElement(arr: List[int]) -> int:
+def majorityElementOptimal(arr ):
     cnt=0
-    el=0
+    el=0  #everytime you get a new element we decrese the count and update element as it becomes 0
     for i in range(len(arr)):
+
         if cnt==0:
-                cnt=1
+                cnt+=1
                 el=arr[i]
         elif arr[i]==el:
             cnt+=1
         else:
             cnt-1
-        cnt1=0
-        for i in range(len(arr)):
-            if arr[i]==el:
-                cnt1 +=1
-        if cnt1 > (len(arr)/2):
+
+        if cnt > (len(arr)/2):
             return el
-        return -1
+    return -1
+
+print(majorityElementOptimal(nums1 ))
             
 
 
@@ -63,13 +61,9 @@ Example:
 [2, 2, 1, 2, 3, 2, 2] → majority element is 2
 
 Key Idea (Intuition)
-
 If an element appears more than half the time, it cannot be completely canceled out by other elements.
-
 The algorithm works by pairing different elements and canceling them.
-
 The remaining candidate (if a majority exists) will be the majority element.
-
 Algorithm Steps
 Step 1: Find a Candidate
 

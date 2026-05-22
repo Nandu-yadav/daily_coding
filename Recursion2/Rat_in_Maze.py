@@ -25,6 +25,7 @@ def backtrack(mat,row,col,ds,ans,vis):
    
     backtrack(mat,row,col-1,ds.append('L'),ans,)  # LEFT
     
+    
 
     mat[row][col]=1      #UNVISIT    #vis[row][col]=False
     return ans

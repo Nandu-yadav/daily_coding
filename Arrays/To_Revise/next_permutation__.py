@@ -8,7 +8,7 @@ def Next_permutation(arr):
         if arr[i]<arr[i+1]:
             index=i
             break
-    if index=-1:
+    if index == -1:
         arr[0:n] = arr[0:n][::-1]
 
     for i in range(n-1,index,-1):

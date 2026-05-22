@@ -25,12 +25,12 @@ def missingNumber(nums):
 
 #OPTIMAL
 def missingNumber1(nums):
-   n=len(arr)
-   sum=n*(n+1)/2
-   s2=0
-   for val in nums:
-      s2+=val
-    return sum-s2
+    n=len(nums)
+    sum=n*(n+1)/2
+    s2=0
+    for val in nums:
+        s2+=val
+    return sum - s2
 
 nums=[9,6,4,2,3,5,7,0,1]
 print(missingNumber1(nums))

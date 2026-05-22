@@ -1,24 +1,35 @@
-def Merge(arr,low,mid,high):
+def merge(low,mid,high,arr):
     i=low
     j=mid+1
-    temp=[]
-    while(i<=mid and j<=high):
-        if(arr[i]<arr[j]):
+    temp=[]                     # mistake 1
+
+    while i<=mid and j<=high:       
+        if arr[i]<arr[j]:
             temp.append(arr[i])
             i+=1
         else:
             temp.append(arr[j])
             j+=1
-    while (i<=mid):
+ 
+    while i<=mid:
         temp.append(arr[i])
+        i+=1
+    
     while j<=high:
         temp.append(arr[j])
-    for i in range(high):
-        arr[i]=temp[i]
+        j+=1
+    for k in range(low,high+1): ##mistake 2
+        arr[k]=temp[k-low]
 
-def mSort(arrr,low,high,n):
+def mergeSort(low,high,arr,n):
+    if low>=high:
+        return
+    mid=(low+high)//2             
     
+    mergeSort(low,mid,arr,n)
+    mergeSort(mid+1,high,arr,n)
+    merge(low,mid,high,arr)
+    return arr
 
-nums=[2,4,1,6,9,6,7,3]
-Merge(nums,0,3,7)   
-print(nums)
+MergeSortarr=[9,8,7,6,5,4,3,2,2,4,1]
+print(mergeSort(0,len(MergeSortarr)-1,MergeSortarr,10))

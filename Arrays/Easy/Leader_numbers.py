@@ -18,8 +18,8 @@ def Leaders_brute(arr):
     n=len(arr)
     ans=[]
     for i in range(n):
-        for j in range(i,n):
-            leader=True
+        for j in range(i,n):       #BRUTE
+            leader=True           ## twice looping and comparing each other
             if arr[i]<arr[j]:
                 leader=False
                 break

@@ -8,6 +8,7 @@ class Solution:
             if arr[i]==num:
                 return True
         return False
+    
     def longestSequence(self,arr): 
         n=len(arr)
         if n==0:
@@ -30,7 +31,7 @@ print(s.longestSequence(nums))
 def longest_sequence2(arr):
     n=len(arr)
     arr.sort()
-    lastSmaller= float('-inf')
+    lastSmaller= 0
     cnt=0
     longest=0
     for i in range(n):

@@ -12,7 +12,7 @@
 def Sorting012(arr):
     n=len(arr)
     low=0
-    mid=0
+    mid=0                               # 3 pointer technique
     high=n-1
     while(mid<=high):
         if arr[mid]==0:
